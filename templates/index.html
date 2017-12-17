@@ -1,0 +1,44 @@
+$def with (movies)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Sanse's Movie Site</title>
+	<style>
+		/** {padding: 0; margin: 0;}*/
+		.container {
+			margin: 10px auto;
+			padding: 15px 0;
+		}
+
+	</style>
+</head>
+<body>
+	<p>欢迎来到</p>
+	<h2>
+		Sanse's Movie Site
+	</h2>
+	<hr>
+
+	<form action="/" method="post">
+		<input style="width: 300px;" type="text" name="title" placeholder="输入需要搜索的电影名称" />
+		<input type="submit" value="搜索" />
+	</form>
+	$for movie in movies:
+		<div class="container">
+				<span class="ids"></span>
+				<span>
+					<img src="/static/poster/$(movie.id).jpg" alt="$movie.title" width="50" height="50">
+				</span>
+				<a href="/movie/$movie['id']">$movie['title']</a>	
+		</div>
+	
+	<script>
+		var ids = document.getElementsByClassName('ids');
+		for (var i = 0, len = ids.length; i < len; i++) {
+			ids[i].innerText = i + 1 + '. ';
+			ids[i].style.fontWeight = 'bolder';
+		}
+	</script>
+</body>
+</html>

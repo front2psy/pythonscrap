@@ -1,0 +1,19 @@
+$def with (movie)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>$movie['title'] details</title>
+</head>
+<body>
+	<img src="/static/poster/$(movie.id).jpg" alt="$movie.title" width="150" height="150">
+	<h3>
+		$movie.title
+	</h3>
+	<p>导演：$movie.directors</p>
+	<p>演员：$movie.casts</p>
+	<p>年代：$movie.year</p>
+	<p>评分：$movie.rating</p>
+	<p>国家：$movie.countries</p>
+</body>
+</html>
